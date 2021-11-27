@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>컴퓨터 부품 쇼핑몰</title>
+	<script type="text/javascript" >
+	   function vaildData(){	
+	      var frmLogin=document.frmLogin;
+	      var user_id=frmLogin.user_id.value;
+	      var user_pw=frmLogin.user_pw.value;
+	
+	      if(user_id.length==0 ||user_id==""){
+	    	  alert("아이디를 입력해 주십시오.");
+	      }else if(user_pw.length==0 ||user_pw==""){
+	    	  alert("비밀번호를 입력해 주십시오.");
+	      }else{
+			frmLogin.method="post";
+			frmLogin.action="login";
+			frmLogin.submit();
+		  }
+	   }
+	   
+	</script>
+</head>
+<body>
+	<h1>컴퓨터 부품 쇼핑몰</h1><hr>
+	<h2>로그인</h2>
+	<form name="frmLogin" method="post" action="login" encType="UTF-8">
+	<input type = "hidden" name = "inOrOut" value = "in">
+      아이디   &nbsp&nbsp&nbsp:&nbsp&nbsp<input type="text" name="user_id"><br>
+      비밀번호:&nbsp&nbsp<input type="password" name="user_pw"><br>
+       &nbsp&nbsp<input type="button" value="로그인" onClick="vaildData()">
+      <input type="button" value="회원가입" onClick="location.href='signUp.html'">
+  </form>
+</body>
+</html>
